@@ -1,5 +1,3 @@
-
-
 /* CREA IL CONTENITORE DELLE FEATURES */
 const navElGen = () => {
     const navEl = document.createElement('nav');
@@ -28,7 +26,11 @@ const navElGen = () => {
 const cardElGen = (obj) => {
     const containerEl = document.createElement('div');
     containerEl.className = 'card';
-    containerEl.append(positionPointGen(obj), nameNazionalityGen(obj));
+    containerEl.append(
+        positionPointGen(obj),
+        nameNazionalityGen(obj),
+        teamGen(obj),
+        pilotImageGen(obj));
     return containerEl;
 }
 
@@ -44,7 +46,7 @@ function positionPointGen(obj) {
     return containerEl;
 }
 
-
+/* CREA LA SEZIONE DELLA CARD NAME-NATIONALITY */
 function nameNazionalityGen(obj) {
     const containerEl = document.createElement('div');
     containerEl.className = "name-nationality";
@@ -61,37 +63,24 @@ function nameNazionalityGen(obj) {
     return containerEl;
 }
 
-/*         <!-- CARD -->
-        <div class="card">
+/* CREA L'H3 CHE CONTIENE IL NOME DELLA SCUDERIA */
+function teamGen(obj) {
+    const teamEl = document.createElement('h3');
+    teamEl.textContent = obj.team;
+    return teamEl;
+}
 
-            <!-- POSITION-POINT -->
-           
-            <!-- NAME-NATIONALITY -->
-            <div class="name-nationality">
-                <h2 class="pilot-name">Max Verstappen</h2>
-                <span class="container-nationality">
-                    <img class="pilot-nationality" src="./img/nationality/Netherlands.svg.png" alt="Bandiera olandese">
-                </span>
-            </div>
-            <!-- END NAME-NATIONALITY -->
-
-            <!-- TEAM -->
-            <h3 class="team">Red Bull</h3>
-
-            <!-- PILOT-IMAGE -->
-            <div class="pilot-image-container">
-                <img class="pilot-image" src="#" alt="Max Verstappen">
-            </div>
-
-        </div>
-        <!-- END CARD --> */
-
+/* CREA L'H3 CHE CONTIENE IL NOME DELLA SCUDERIA */
+function pilotImageGen(obj) {
+    const pilotImageEl = document.createElement('img');
+    pilotImageEl.className = "pilot-image";
+    pilotImageEl.src = obj.image;
+    return pilotImageEl;
+}
 
 export {
     navElGen,
     cardElGen,
-    positionPointGen
-
-
+    positionPointGen,
 }
 
