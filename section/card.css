@@ -1,0 +1,66 @@
+main {
+    border-radius: 16px;
+    height: 100%;
+    padding: 1em;
+}
+
+.card {
+    border-top: solid 2px rgba(0, 0, 0, 0.667);
+    border-right: solid 2px rgba(0, 0, 0, 0.667);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 24px;
+    margin: 1em;
+}
+
+.position-point {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 1em;
+}
+
+.name-nationality {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 1em;
+}
+
+.container-nationality {
+    height: 50px;
+    display: flex;
+}
+
+.pilot-image {
+    border-radius: 50px;
+    height: 50%;
+    display: flex;
+    margin: 100px auto;
+    border: 1px solid black;
+}
+
+
+@media only screen and (min-width: 908px) {
+
+    main {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .card {
+        width: 33%;
+    }
+
+    .pilot-image {
+
+        height: 70%;
+    }
+
+}
